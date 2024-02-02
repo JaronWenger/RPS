@@ -9,13 +9,20 @@ body {
 
 header {
     text-align: center;
-    margin-top: 300px;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 80px;
 }
 
-.input-container {
+.button-container {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    margin-top: -60px;
+}
+.button-container button{
+    font-size: 90px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 input {
@@ -48,4 +55,5 @@ button {
 .score {
     margin-top: 100px;
     text-align: center;
+    font-size: 50px;
 }

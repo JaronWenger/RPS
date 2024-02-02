@@ -9,29 +9,30 @@
 <body>
 
     <header>
-        <h1>ROCK PAPER SCISSORS</h1>
+        <h1 id="heading">ROCK PAPER SCISSORS</h1>
     </header>
 
-    <div class="input-container">
-        <input placeholder="Type Your Selection" id="userInput">
-        <button id="button">SHOOT</button>
+    <div class="button-container">
+        <button id="rock">🪨</button>
+        <button id="paper">📄</button>
+        <button id="scissors">✂️</button>
     </div>
 
     <div class="game-container">
         <div class="player">
             <h2>PLAYER ONE</h2>
-            <div id="P1" class="selection"></div>
+            <div id="P1" class="selection">_</div>
         </div>
 
         <div class="cpu">
-            <h2>CPU</h2>
-            <div id="CPU" class="selection"></div>
+            <h2>COMPUTER</h2>
+            <div id="CPU" class="selection">_</div>
         </div>
     </div>
 
     <div class="score">
-        <h3 id="level-round">ROUND: 1</h3>
-        <h1 id="level-score" >0-0</h1>
+        <h3 id="level-round">FIRST TO 5</h3>
+        <h1 id="level-score">0-0</h1>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

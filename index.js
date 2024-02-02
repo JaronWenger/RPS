@@ -1,35 +1,74 @@
-
-
-
-
-
-function getComputerChoice() {}
-
-function singleRound() {}
-
 var p1Score = 0
 var cpuScore = 0
 var round = 0
+var gameEnded = false
 
-$("#button").on("click", function() {
-    // If the enter button is clicked, call the function
-    p1Box();
-    p2Box()
-    roundResults()
+
+
+// $("#button").on("click", function() {
+//     // If the enter button is clicked, call the function
+//     p1Box();
+//     p2Box()
+//     roundResults()
+// });
+// $("#userInput").keypress(function(event) {
+//     if (event.which === 13) {
+//         // If Enter key is pressed, call the function
+//         p1Box()
+//         p2Box();
+//         roundResults()
+//     }})
+
+
+$(document).ready(function() {
+    // Attach click event handler to the heading element
+    $("#heading").click(function() {
+        // Refresh the page when the heading is clicked
+        location.reload();
+    });
+
+    // Your existing code
 });
-$("#userInput").keypress(function(event) {
-    if (event.which === 13) {
-        // If Enter key is pressed, call the function
-        p1Box()
-        p2Box();
-        roundResults()
-    }})
+    
 
 
 
 
-function p1Box() {
-    var userInput = $("#userInput").val().toLowerCase();
+
+
+    $(document).ready(function() {
+        // Event listeners for the buttons
+        $("#rock").click(function() {
+            p1Box("rock");
+            p2Box()
+            roundResults()
+        });
+    
+        $("#paper").click(function() {
+            p1Box("paper");
+            p2Box()
+            roundResults()
+        });
+    
+        $("#scissors").click(function() {
+            p1Box("scissors");
+            p2Box()
+            roundResults()
+        });
+    
+        // Your other game logic goes here
+    });
+
+
+
+
+
+
+
+
+
+function p1Box(prop) {
+    var userInput = prop
 
     if (userInput === "rock"){
         $("#P1").text("🪨");
@@ -115,5 +154,11 @@ function roundResults() {
         $("#P1").css("background-color", "white");
     }
 
-
+    if (p1Score === 5 && gameEnded === false) {
+        $("#heading").text("You Win!");
+        gameEnded = true
+    } else if (cpuScore === 5 && gameEnded === false) {
+        $("#heading").text("Game Over");
+        gameEnded = true
+    }
 }
